@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block extra_head %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% endblock %}
+{% block content %}
+<section class="map-page section-padding">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">인터랙티브 지도</span>
+            <h2 class="section-title">치유 정원 & 골프 코스<br>탐험하기</h2>
+            <p class="section-desc">추천 코스를 지도에서 확인하고<br>각 스팟의 상세 정보를 살펴보세요.</p>
+        </div>
+
+        <div class="map-controls">
+            <div class="map-filter">
+                <button class="filter-btn active" data-filter="all" onclick="filterMap('all')">🌿 전체</button>
+                <button class="filter-btn" data-filter="course" onclick="filterMap('course')">🏌️ 골프 코스</button>
+                <button class="filter-btn" data-filter="park" onclick="filterMap('park')">🌳 공원</button>
+                <button class="filter-btn" data-filter="pet" onclick="filterMap('pet')">🐾 반려동물</button>
+            </div>
+            <div class="map-info" id="map-info">
+                <span>📍 클릭하여 상세 정보를 확인하세요</span>
+            </div>
+        </div>
+
+        <div class="map-container-wrapper">
+            <div id="map" class="map-container"></div>
+            <div class="map-sidebar" id="map-sidebar">
+                <div class="sidebar-placeholder">
+                    <span class="sidebar-icon">🗺️</span>
+                    <p>지도에서 장소를 클릭하면<br>상세 정보가 표시됩니다.</p>
+                </div>
+                <div class="sidebar-content" id="sidebar-content" style="display:none;">
+                    <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+                    <div id="sidebar-details"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Route Preview Section -->
+        <div class="route-preview section-padding" id="route-preview" style="display:none;">
+            <div class="section-header">
+                <span class="section-badge">추천 코스</span>
+                <h3 id="route-preview-title"></h3>
+            </div>
+            <div class="route-timeline" id="route-timeline"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/map.js') }}"></script>
+{% endblock %}

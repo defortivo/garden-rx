@@ -1,0 +1,153 @@
+[
+  {
+    "id": "pet_001",
+    "place_name": "뉴서울컨트리클럽",
+    "korean_name": "뉴서울컨트리클럽",
+    "place_type": "골프장/리조트",
+    "location": "경기도 가평군",
+    "pet_allowed": true,
+    "pet_policy": "소형견 및 중형견 동반 가능 (목줄 필수)",
+    "pet_facilities": [
+      "반려동물 전용 산책로 (1.5km)",
+      "펫 케어룸 (에어컨, 물, 간식)",
+      "반려동물 전용 카트",
+      "펫 샤워실",
+      "수의사 상주 (주말)"
+    ],
+    "restrictions": {
+      "breed_restriction": false,
+      "size_limit_cm": 60,
+      "leash_required": true,
+      "muzzle_required": false,
+      "vaccination_required": true
+    },
+    "seasonal_best": "봄, 가을",
+    "coordinates": {"lat": 37.8314, "lng": 127.5090},
+    "contact": "031-580-2000",
+    "website": "www.nscc.co.kr"
+  },
+  {
+    "id": "pet_002",
+    "place_name": "서울숲 (Seoul Forest)",
+    "korean_name": "서울숲",
+    "place_type": "도시공원",
+    "location": "서울특별시 성동구",
+    "pet_allowed": true,
+    "pet_policy": "모든 견종 동반 가능 (목줄 및 배변봉투 필수)",
+    "pet_facilities": [
+      "반려견 놀이터 (대형/소형 분리)",
+      "펫 워터 파크",
+      "반려동물 쉼터 그늘막",
+      "배변봉투 무료 제공",
+      "반려동물 음수대"
+    ],
+    "restrictions": {
+      "breed_restriction": false,
+      "size_limit_cm": null,
+      "leash_required": true,
+      "muzzle_required": false,
+      "vaccination_required": false
+    },
+    "seasonal_best": "사계절",
+    "coordinates": {"lat": 37.5449, "lng": 127.0392},
+    "contact": "120 (다산콜센터)",
+    "website": "www.seoulforest.or.kr"
+  },
+  {
+    "id": "pet_003",
+    "place_name": "남산공원 (Namsan Park)",
+    "korean_name": "남산공원",
+    "place_type": "도시자연공원",
+    "location": "서울특별시 중구",
+    "pet_allowed": true,
+    "pet_policy": "소형견만 동반 가능 (목줄 필수, 일부 구간 제한)",
+    "pet_facilities": [
+      "반려동물 동반 산책로",
+      "배변봉투 비치대",
+      "반려동물 동반 벤치 구역"
+    ],
+    "restrictions": {
+      "breed_restriction": true,
+      "size_limit_cm": 40,
+      "leash_required": true,
+      "muzzle_required": false,
+      "vaccination_required": true
+    },
+    "seasonal_best": "봄, 가을",
+    "coordinates": {"lat": 37.5512, "lng": 126.9882},
+    "contact": "02-3783-5900",
+    "website": "www.parks.seoul.go.kr"
+  },
+  {
+    "id": "pet_004",
+    "place_name": "국립수목원 (Korea National Arboretum)",
+    "korean_name": "국립수목원",
+    "place_type": "수목원",
+    "location": "경기도 포천시",
+    "pet_allowed": false,
+    "pet_policy": "반려동물 출입 불가 (도우미견 제외)",
+    "pet_facilities": [],
+    "restrictions": {
+      "breed_restriction": null,
+      "size_limit_cm": null,
+      "leash_required": null,
+      "muzzle_required": null,
+      "vaccination_required": null
+    },
+    "seasonal_best": "봄, 여름",
+    "coordinates": {"lat": 37.7597, "lng": 127.1856},
+    "contact": "031-540-2000",
+    "website": "www.kna.go.kr"
+  },
+  {
+    "id": "pet_005",
+    "place_name": "여의도공원 (Yeouido Park)",
+    "korean_name": "여의도공원",
+    "place_type": "도시공원",
+    "location": "서울특별시 영등포구",
+    "pet_allowed": true,
+    "pet_policy": "소형견 및 중형견 동반 가능 (목줄 필수)",
+    "pet_facilities": [
+      "반려견 놀이터",
+      "반려동물 동반 잔디광장",
+      "배변봉투 비치대",
+      "반려동물 음수대"
+    ],
+    "restrictions": {
+      "breed_restriction": false,
+      "size_limit_cm": 50,
+      "leash_required": true,
+      "muzzle_required": false,
+      "vaccination_required": false
+    },
+    "seasonal_best": "봄, 가을",
+    "coordinates": {"lat": 37.5240, "lng": 126.9160},
+    "contact": "02-761-4078",
+    "website": "www.parks.seoul.go.kr"
+  },
+  {
+    "id": "pet_006",
+    "place_name": "하늘공원 (Haneul Park)",
+    "korean_name": "하늘공원",
+    "place_type": "생태공원",
+    "location": "서울특별시 마포구",
+    "pet_allowed": true,
+    "pet_policy": "모든 견종 동반 가능 (목줄 필수, 데크 구역 제외)",
+    "pet_facilities": [
+      "반려동물 동반 탐방로",
+      "전망대 펫 존",
+      "배변봉투 비치대"
+    ],
+    "restrictions": {
+      "breed_restriction": false,
+      "size_limit_cm": null,
+      "leash_required": true,
+      "muzzle_required": false,
+      "vaccination_required": false
+    },
+    "seasonal_best": "가을 (억새), 봄",
+    "coordinates": {"lat": 37.5675, "lng": 126.8866},
+    "contact": "02-300-5500",
+    "website": "www.parks.seoul.go.kr"
+  }
+]

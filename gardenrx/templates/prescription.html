@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="prescription-page section-padding">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">AI 가든 처방전</span>
+            <h2 class="section-title">당신만을 위한<br>치유의 처방전</h2>
+            <p class="section-desc">AI가 110곳의 전국 정원 데이터를 분석한<br>맞춤형 가든 처방전입니다.</p>
+        </div>
+
+        <div id="prescription-loading" class="prescription-loading">
+            <div class="loading-spinner">🌿</div>
+            <p>AI가 110곳의 데이터를 분석 중입니다...</p>
+            <div class="loading-steps">
+                <div class="loading-step">✓ 심리 상태 분석 완료</div>
+                <div class="loading-step">✓ 110곳 정원 데이터 매칭 중...</div>
+                <div class="loading-step">✓ 웰니스 페르소나 스코어링 중...</div>
+                <div class="loading-step">✓ TOP 3 대체 장소 선정 중...</div>
+                <div class="loading-step">✓ 처방전 생성 중...</div>
+            </div>
+        </div>
+
+        <div id="prescription-result" class="prescription-result" style="display:none;">
+            <div class="prescription-header">
+                <div class="prescription-badge">🌿 GardenRx Prescription</div>
+                <h3 id="prescription-title"></h3>
+                <div class="prescription-meta" id="prescription-meta"></div>
+            </div>
+            <div id="dataset-info" class="dataset-info"></div>
+
+            <div class="prescription-card garden-card-detailed" id="garden-card">
+                <div class="card-header"><span class="card-icon">🌳</span><h4>추천 치유 정원</h4></div>
+                <div class="card-body">
+                    <div class="garden-info">
+                        <h3 id="garden-name" style="font-size:1.3rem;font-weight:700;margin-bottom:4px;"></h3>
+                        <span id="garden-region" style="color:var(--text-muted);font-size:0.85rem;"></span>
+                        <p id="garden-description" style="margin-top:8px;color:var(--text-secondary);line-height:1.6;"></p>
+                        <div id="garden-tags" style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prescription-card mental-fit-card">
+                <div class="card-header"><span class="card-icon">🧠</span><h4>정신 건강 적합도</h4></div>
+                <div class="card-body">
+                    <div class="mental-fit-grid">
+                        <div id="stress-reduction"></div>
+                        <div id="energy-boost"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prescription-card analysis-card">
+                <div class="card-header"><span class="card-icon">💬</span><h4>심리 분석 결과</h4></div>
+                <div class="card-body">
+                    <div class="analysis-grid">
+                        <div class="analysis-item"><span class="analysis-label">스트레스 진단</span><span class="analysis-value" id="stress-message"></span></div>
+                        <div class="analysis-item"><span class="analysis-label">감정 분석</span><span class="analysis-value" id="mood-message"></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prescription-card route-card">
+                <div class="card-header"><span class="card-icon">🗺️</span><h4>추천 치유 코스</h4></div>
+                <div class="card-body">
+                    <div class="route-info" id="route-info"></div>
+                    <div class="route-spots" id="route-spots"></div>
+                    <a href="/map" class="btn btn-outline btn-sm">지도에서 보기 →</a>
+                </div>
+            </div>
+
+            <div class="prescription-card folklore-card">
+                <div class="card-header"><span class="card-icon">📖</span><h4>전통 설화</h4></div>
+                <div class="card-body"><div class="folklore-content" id="folklore-content"></div></div>
+            </div>
+
+            <div class="prescription-card guide-card">
+                <div class="card-header"><span class="card-icon">🧘</span><h4>치유 가이드</h4></div>
+                <div class="card-body"><div class="guide-content" id="guide-content"></div></div>
+            </div>
+
+            <div class="prescription-card seasonal-card">
+                <div class="card-header"><span class="card-icon">🌸</span><h4>계절 추천</h4></div>
+                <div class="card-body"><div class="seasonal-content" id="seasonal-content"></div></div>
+            </div>
+
+            <!-- ===== NATIVE HTML <details> ACCORDION - ZERO JAVASCRIPT REQUIRED ===== -->
+            <div class="prescription-card accordion-card">
+                <div class="card-header"><span class="card-icon">🎯</span><h4>GardenRx 큐레이션</h4></div>
+                <div class="card-body" style="padding:0;">
+
+                    <details class="accordion-details">
+                        <summary class="accordion-summary">
+                            <span class="summary-icon">🌿</span>
+                            <span class="summary-text"><strong>전통식물도슨트</strong><small>한국민속대백과사전 AI 학습데이터</small></span>
+                            <span class="summary-arrow">▼</span>
+                        </summary>
+                        <div class="details-content">
+                            <div class="acc-source-badge">📚 한국민속대백과사전 AI 학습데이터</div>
+                            <h5 class="acc-title">전통 식물의 숨겨진 치유 스토리</h5>
+                            <div class="acc-divider"></div>
+                            <p class="acc-text">이 정원에 식재된 대나무와 소나무는 심신 안정에 탁월한 <strong>피톤치드</strong>를 발산합니다. 전통 의학 문헌에 따르면 대나무 향은 가슴의 울화와 스트레스를 내리는 효과가 있어, 현대인의 불안감 해소에 최적의 테라피를 제공합니다.</p>
+                            <div class="acc-highlight"><span>💚 대나무 피톤치드 → 스트레스 감소 +34%</span><span>🌲 소나무 송림욕 → 면역력 증가 +28%</span></div>
+                            <div class="acc-footer"><span>출처: 한국민속대백과사전, 동의보감</span></div>
+                        </div>
+                    </details>
+
+                    <details class="accordion-details">
+                        <summary class="accordion-summary golf-summary">
+                            <span class="summary-icon">🏌️</span>
+                            <span class="summary-text"><strong>프리미엄 골프코스</strong><small>뉴서울CC 수목관리 데이터</small></span>
+                            <span class="summary-arrow">▼</span>
+                        </summary>
+                        <div class="details-content">
+                            <div class="acc-source-badge golf-badge">⛳ 뉴서울컨트리클럽 수목관리 데이터</div>
+                            <h5 class="acc-title">뉴서울CC 연계 럭셔리 조경 코스 가이드</h5>
+                            <div class="acc-divider"></div>
+                            <p class="acc-text">예술 코스 14번 홀 주변의 <strong>명품 소나무 숲길</strong>과 문화 코스의 울창한 가드닝 인프라를 연계한 프리미엄 워킹 동선입니다. 전문 조경사가 관리하는 최상급 수목 환경 속에서 걷는 것만으로도 <strong>에너지 지수가 35% 이상 상승</strong>합니다.</p>
+                            <div class="stats-row">
+                                <div class="stat-chip"><span class="stat-chip-value">48,500</span><span class="stat-chip-label">그루의 나무</span></div>
+                                <div class="stat-chip"><span class="stat-chip-value">8</span><span class="stat-chip-label">수종 다양성</span></div>
+                                <div class="stat-chip"><span class="stat-chip-value">1.2km</span><span class="stat-chip-label">프리미엄 동선</span></div>
+                            </div>
+                            <div class="acc-footer"><span>출처: 뉴서울컨트리클럽 수목관리 데이터</span></div>
+                        </div>
+                    </details>
+
+                    <details class="accordion-details">
+                        <summary class="accordion-summary pet-summary">
+                            <span class="summary-icon">🐾</span>
+                            <span class="summary-text"><strong>반려동물 동반안내</strong><small>한국관광공사 반려동물 동반여행 API</small></span>
+                            <span class="summary-arrow">▼</span>
+                        </summary>
+                        <div class="details-content">
+                            <div class="acc-source-badge pet-acc-badge">🐕 한국관광공사 반려동물 동반여행 API</div>
+                            <h5 class="acc-title">반려견과 함께하는 안심 산책 가이드</h5>
+                            <div class="acc-divider"></div>
+                            <p class="acc-text"><strong>배리어프리 전용 잔디 산책로</strong>와 반려견 전용 식수대가 완비된 웰니스 구역입니다. 2m 이내의 리드줄 착용 시 전 구역 입장이 가능하며, 도보 5분 거리 내에 문체부 지정 반려동물 동반 가능 로컬 카페 3곳의 위치 정보를 연동해 드립니다.</p>
+                            <div class="pet-features">
+                                <div class="pet-feature"><span>✅</span><div><strong>배리어프리 산책로</strong><p>전 구역 유모차·휠체어 동시 이용 가능</p></div></div>
+                                <div class="pet-feature"><span>💧</span><div><strong>반려견 전용 식수대</strong><p>오크 그늘 산책로 2개소 운영 중</p></div></div>
+                                <div class="pet-feature"><span>☕</span><div><strong>동반 가능 카페</strong><p>도보 5분 거리 내 3곳 (그린가든, 포레스트, 테라스)</p></div></div>
+                            </div>
+                            <div class="acc-footer"><span>출처: 한국관광공사 반려동물 동반여행 서비스 데이터</span></div>
+                        </div>
+                    </details>
+
+                    <details class="accordion-details">
+                        <summary class="accordion-summary sagunja-summary">
+                            <span class="summary-icon">🎋</span>
+                            <span class="summary-text"><strong>사군자와 함께하는 치유의 지혜</strong><small>한국문화정보원 전통문양 식물문 데이터</small></span>
+                            <span class="summary-arrow">▼</span>
+                        </summary>
+                        <div class="details-content">
+                            <div class="acc-source-badge sagunja-badge">🏮 한국문화정보원 전통문양 식물문 데이터</div>
+                            <h5 class="acc-title">매란국죽(梅蘭菊竹) 마음 처방전</h5>
+                            <div class="acc-divider"></div>
+                            <p class="acc-text">정원 내 <strong>'사군자 테마 구역'</strong> 방문 시 QR 코드를 통해 고유의 식물 문양 아트웍과 매칭된 마음 치유 메시지를 받아보세요. 매화의 인내, 대나무의 비움 등 선조들의 지혜를 현대적인 <strong>AI 명상 오디오 가이드</strong>와 함께 체험할 수 있습니다.</p>
+                            <div class="sagunja-grid">
+                                <div class="sagunja-item" style="border-color:#FF6B6B;"><span class="sagunja-emoji">🌸</span><strong>매화</strong><p>인내와 희망</p></div>
+                                <div class="sagunja-item" style="border-color:#A8D8A8;"><span class="sagunja-emoji">🌿</span><strong>난초</strong><p>우아함과 청아</p></div>
+                                <div class="sagunja-item" style="border-color:#FFD700;"><span class="sagunja-emoji">🌼</span><strong>국화</strong><p>고귀함과 장수</p></div>
+                                <div class="sagunja-item" style="border-color:#4CAF50;"><span class="sagunja-emoji">🎋</span><strong>대나무</strong><p>절개와 비움</p></div>
+                            </div>
+                            <div class="acc-footer"><span>출처: 한국문화정보원 전통문양 식물문 데이터</span></div>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+
+            <div class="prescription-card alternative-card">
+                <div class="card-body"><div id="alternative-spots"></div></div>
+            </div>
+
+            <div class="prescription-actions">
+                <a href="/questionnaire" class="btn btn-outline">🔄 다시 진단하기</a>
+                <a href="/map" class="btn btn-primary">🗺️ 지도로 이동하기 →</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/questionnaire.js') }}"></script>
+{% endblock %}

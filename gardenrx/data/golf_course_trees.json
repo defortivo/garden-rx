@@ -1,0 +1,121 @@
+[
+  {
+    "id": "golf_001",
+    "name": "뉴서울컨트리클럽 (New Seoul Country Club)",
+    "location": "경기도 가평군",
+    "coordinates": {"lat": 37.8314, "lng": 127.5090},
+    "total_area_sqm": 1200000,
+    "tree_count": 48500,
+    "tree_species": [
+      {"name": "소나무", "count": 12000, "korean_name": "소나무", "symbolism": "장수, 불변"},
+      {"name": "잣나무", "count": 8500, "korean_name": "잣나무", "symbolism": "풍요, 건강"},
+      {"name": "전나무", "count": 6200, "korean_name": "전나무", "symbolism": "고귀, 위엄"},
+      {"name": "단풍나무", "count": 4800, "korean_name": "단풍나무", "symbolism": "아름다움, 변화"},
+      {"name": "철쭉", "count": 7500, "korean_name": "철쭉", "symbolism": "번영, 기쁨"},
+      {"name": "주목", "count": 3500, "korean_name": "주목", "symbolism": "영원, 장수"},
+      {"name": "느티나무", "count": 2800, "korean_name": "느티나무", "symbolism": "보호, 안식"},
+      {"name": "산벚나무", "count": 3200, "korean_name": "산벚나무", "symbolism": "아름다움, 덧없음"}
+    ],
+    "garden_features": [
+      "전통 한국 정원 양식의 조경",
+      "18홀 각 홀마다 다른 수종 배치",
+      "계절별 꽃길 조성 (벚꽃, 철쭉, 단풍)",
+      "자생식물원 운영",
+      "약초원 및 허브가든"
+    ],
+    "healing_programs": [
+      "골프와 산림욕 결합 프로그램",
+      "명상 골프 코스",
+      "자연 치유 워킹 코스"
+    ],
+    "walking_routes": [
+      {
+        "name": "숲속 치유 코스",
+        "distance_km": 3.2,
+        "duration_minutes": 50,
+        "difficulty": "쉬움",
+        "description": "소나무 숲을 따라 조성된 평탄한 산책로",
+        "spots": [
+          {"name": "A. 송림 입구", "lat": 37.8314, "lng": 127.5090, "description": "울창한 소나무 숲이 시작되는 지점"},
+          {"name": "B. 약초원 전망대", "lat": 37.8330, "lng": 127.5110, "description": "다양한 약초를 관찰할 수 있는 전망대"},
+          {"name": "C. 연못 정자", "lat": 37.8320, "lng": 127.5130, "description": "전통 연못과 정자가 있는 휴식 공간"},
+          {"name": "D. 치유의 숲", "lat": 37.8300, "lng": 127.5100, "description": "피톤치드가 가득한 치유 공간"}
+        ]
+      },
+      {
+        "name": "단풍 명상 코스",
+        "distance_km": 2.5,
+        "duration_minutes": 40,
+        "difficulty": "매우 쉬움",
+        "description": "단풍나무 길을 따라 걷는 명상 산책로",
+        "spots": [
+          {"name": "A. 단풍 터널", "lat": 37.8340, "lng": 127.5080, "description": "단풍나무가 아치를 이루는 아름다운 길"},
+          {"name": "B. 명상의 뜰", "lat": 37.8350, "lng": 127.5090, "description": "조용히 명상할 수 있는 정원"},
+          {"name": "C. 전망 데크", "lat": 37.8345, "lng": 127.5110, "description": "클럽하우스와 숲이 한눈에 보이는 전망대"}
+        ]
+      }
+    ],
+    "pet_friendly": true,
+    "pet_facilities": ["반려동물 전용 산책로", "펫 케어 센터", "반려동물 동반 골프 카트"],
+    "operating_hours": "06:00-20:00",
+    "seasonal_highlights": {
+      "spring": "벚꽃과 철쭉이 만개하는 아름다운 정원",
+      "summer": "울창한 숲 그늘에서의 시원한 산림욕",
+      "autumn": "장관을 이루는 단풍과 국화 전시",
+      "winter": "설경 속 소나무 숲의 장엄한 풍경"
+    }
+  },
+  {
+    "id": "golf_002",
+    "name": "남서울컨트리클럽 (South Seoul Country Club)",
+    "location": "경기도 용인시",
+    "coordinates": {"lat": 37.2411, "lng": 127.1775},
+    "total_area_sqm": 980000,
+    "tree_count": 36200,
+    "tree_species": [
+      {"name": "소나무", "count": 9500, "korean_name": "소나무", "symbolism": "장수, 불변"},
+      {"name": "낙엽송", "count": 7200, "korean_name": "낙엽송", "symbolism": "적응, 변화"},
+      {"name": "참나무", "count": 6800, "korean_name": "참나무", "symbolism": "힘, 지혜"},
+      {"name": "배롱나무", "count": 3500, "korean_name": "배롱나무", "symbolism": "영원한 사랑"},
+      {"name": "목련", "count": 2800, "korean_name": "목련", "symbolism": "숭고, 순결"},
+      {"name": "산수유", "count": 2400, "korean_name": "산수유", "symbolism": "장수, 풍요"},
+      {"name": "회화나무", "count": 2000, "korean_name": "회화나무", "symbolism": "명예, 학식"},
+      {"name": "이팝나무", "count": 2000, "korean_name": "이팝나무", "symbolism": "풍년, 기쁨"}
+    ],
+    "garden_features": [
+      "한국 전통 정원 양식 도입",
+      "계절별 초화류 식재",
+      "자생화 단지 조성",
+      "전통 약초 정원"
+    ],
+    "healing_programs": [
+      "산림 치유 워킹",
+      "전통 정원 명상 프로그램",
+      "허브 아로마 테라피"
+    ],
+    "walking_routes": [
+      {
+        "name": "약초 치유 산책로",
+        "distance_km": 2.8,
+        "duration_minutes": 45,
+        "difficulty": "쉬움",
+        "description": "약초 정원을 중심으로 조성된 치유 산책로",
+        "spots": [
+          {"name": "A. 약초 정원 입구", "lat": 37.2411, "lng": 127.1775, "description": "다양한 약초가 식재된 정원 입구"},
+          {"name": "B. 허브 향기 정원", "lat": 37.2420, "lng": 127.1790, "description": "라벤더, 로즈마리 등 향기로운 허브 정원"},
+          {"name": "C. 전통 연못", "lat": 37.2405, "lng": 127.1800, "description": "연꽃이 피는 전통 양식 연못"},
+          {"name": "D. 숲속 쉼터", "lat": 37.2395, "lng": 127.1780, "description": "그늘 아래 벤치가 있는 휴식 공간"}
+        ]
+      }
+    ],
+    "pet_friendly": true,
+    "pet_facilities": ["반려동물 동반 가능 구역", "펫 워터 스테이션"],
+    "operating_hours": "06:30-19:30",
+    "seasonal_highlights": {
+      "spring": "목련과 산수유가 아름다운 정원",
+      "summer": "배롱나무 꽃이 만개한 정원",
+      "autumn": "단풍과 국화 전시",
+      "winter": "설경 속 고요한 정원"
+    }
+  }
+]
